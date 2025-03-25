@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta DataPrev</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script>
+// Código extraído de <script>
+
         async function buscarImagem() {
             let cpf = document.getElementById("cpf").value;
             cpf = cpf.replace(/\D/g, ""); // Remove caracteres não numéricos
@@ -44,27 +38,18 @@
         
         function enviarParaFuncao() {
             console.log("Imagem enviada para a função.");
-            // Aqui implementamos a API do Função para a inserção do documento na proposta
+            // Aqui pode ser implementada a lógica de envio para outra função
         }
-    </script>
-</head>
-<body class="container mt-5">
-    <h2 class="mb-4">Consulta IN100 - DataPrev</h2>
     
-    <div class="mb-3">
-        <label for="cpf" class="form-label">Coloque um CPF (Kaique):</label>
-        <input type="text" id="cpf" class="form-control" placeholder="000.000.000-00" oninput="this.value = this.value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')" maxlength="14">
-    </div>
-    
-    <button class="btn btn-primary" onclick="buscarImagem()" style="background-color: rgb( 184, 47, 107);border: none;border-radius: 20px;height: 40px;">Consultar DataPrev</button>
-    <div class="mt-3">
-        <button id="downloadBtn" class="btn btn-success me-2" style="display: none;" onclick="baixarImagem()">Download</button>
-        <button id="sendFunctionBtn" class="btn btn-warning" style="display: none;" onclick="enviarParaFuncao()">Enviar para Função</button>
-    </div>
-    
-    <div class="mt-4" style="margin-bottom: 200px;">
-        <img id="imagemResposta" style="display: none; max-width: 100%;" class="img-thumbnail">
-    </div>
-    
-</body>
-</html>
+
+// Código extraído do evento oninput
+(function() { this.value = this.value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') })();
+
+// Código extraído do evento onclick
+(function() { buscarImagem() })();
+
+// Código extraído do evento onclick
+(function() { baixarImagem() })();
+
+// Código extraído do evento onclick
+(function() { enviarParaFuncao() })();
